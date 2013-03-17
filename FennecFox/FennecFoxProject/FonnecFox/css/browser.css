@@ -1,0 +1,12 @@
+body {
+	text-align: center;
+}
+#wrapper {
+	text-align: left;
+	max-width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	height: auto;
+	font-family: "Century Glotic";
+}

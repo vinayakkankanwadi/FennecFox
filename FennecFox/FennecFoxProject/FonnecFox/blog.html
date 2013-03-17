@@ -1,0 +1,300 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+
+<script type='text/javascript' src='js/jquery.js'></script>
+<script type='text/javascript' src='js/jquery.jqDock.js'></script>
+
+<script type='text/javascript'>
+
+		
+
+jQuery(document).ready(function($){
+	
+	var changeTooltipPosition = function(event) {
+	  var tooltipX = event.pageX - 8;
+	  var tooltipY = event.pageY + 8;
+	  $('div.tooltip').css({top: tooltipY, left: tooltipX});
+	};
+ 
+	var showTooltip = function(event) {
+		var tip = ($(this).parent().find('img').jqDock('get').Title);
+				
+	  $('div.tooltip').remove();
+	  $('<div class="tooltip" >'+ tip + " ..." +'</div>')
+            .appendTo('body');
+	  changeTooltipPosition(event);
+	};
+ 
+	var hideTooltip = function() {
+	   $('div.tooltip').remove();
+	};
+	
+	/*
+	// set up the options to be used for jqDock...
+	var onDockSleep = function(){ //scope (this) is the #menu element
+				//we are going to fade out the entire menu
+				//for IE we need to set filter:inherit for elements below me 
+				//(#menu) and down to (and including) div.jqDock...
+				$(this).find('.jqDockWrap,.jqDock').css({filter:'inherit'}).end()
+					//...fade out the menu...
+					.animate({opacity:0},1000)
+					//...bind a one-off mousemove event to the menu element...
+					.one('mousemove', function(){
+							//fade the menu back in...
+							$(this).stop().animate(
+									{opacity:1}
+								, 1000
+								, function(){
+										//clear the filters (for IE)...
+										$('.jqDockWrap,.jqDock', this).add(this).css({filter:''}); 
+										//give a wake-up nudge. NB: *must* wait until animation
+										//is complete and filters are reset (for IE)!...
+										$(this).trigger('docknudge');
+									}
+								);
+							return false;
+						});
+			}
+		, dockOptions =
+			{ align: 'top' // horizontal menu, with expansion DOWN from a fixed TOP edge
+			, fadeIn: 2000 // fade in over 2 seconds
+			, idle: 6000 // set idle timeout to 6 seconds
+			, onSleep: onDockSleep // handler declared above
+			};
+	
+	*/
+	var dockOptions =
+	{
+		align: 'middle',
+		size: 50,
+		base:100
+	}
+
+, exampleClicks = function(ev){
+			alert("You clicked '"+($(this).parent().find('img').jqDock('get').Title)+"' <"+this.tagName.toUpperCase()+">"+ev.type);
+			this.blur();
+			return false;
+		};
+		
+
+	// ...and apply...
+//	$('#menu').jqDock(dockOptions);
+		$('#menu').children().bind({
+		mousemove : changeTooltipPosition,
+	    mouseenter : showTooltip,
+	    mouseleave: hideTooltip
+	   }) //my default click handler
+		.children().bind('click', exampleClicks).end().end()
+		.jqDock(dockOptions);
+});
+
+
+</script>
+
+
+<style type="text/css">
+
+p.small {line-height:100%;}
+p.big {line-height:130%;}
+p.large {
+	font-family: "Century Gothic";
+	font-size: 36px;
+}
+
+    #hint{
+		cursor:pointer;
+	}
+	.tooltip{
+        background-color: #FFF;  
+		position: absolute;
+		z-index:9999;
+		min-width:70px;
+		min-height:20px;
+	}
+	
+
+img#bg {
+	z-index:-9999;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+
+#Container {
+	position:absolute;
+	width:800px;
+	height:1144px;
+	z-index:1;
+	visibility: visible;
+	left: 0px;
+	top: 0px;
+}
+#Header {
+	position:absolute;
+	width:763px;
+	height:352px;
+	z-index:2;
+	left: 17px;
+	top: 41px;
+	visibility: visible;
+}
+</style>
+<link href="css/browser.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+#Social {
+	position:absolute;
+	left:461px;
+	top:92px;
+	width:311px;
+	height:100px;
+	z-index:3;
+	visibility: visible;
+}
+#Logo {
+	position:absolute;
+	left:27px;
+	top:53px;
+	width:433px;
+	height:337px;
+	z-index:3;
+}
+#Body {
+	position:absolute;
+	left:43px;
+	top:456px;
+	width:688px;
+	height:340px;
+	z-index:2;
+	visibility: visible;
+}
+#Footer {
+	position:absolute;
+	left:46px;
+	top:1057px;
+	width:705px;
+	height:64px;
+	z-index:2;
+	visibility: visible;
+}
+
+#navi li
+{
+display: inline;
+list-style-type: none;
+padding-right: 10px;
+}
+
+#menu {
+	position:absolute;
+	left:50px;
+	top:930px;
+	width:687px;
+	height:116px;
+	z-index:1;
+}
+#apDiv1 {
+	position:absolute;
+	left:264px;
+	top:83px;
+	width:514px;
+	height:49px;
+	z-index:1;
+}
+#TopLink {
+	position:absolute;
+	left:632px;
+	top:43px;
+	width:111px;
+	height:35px;
+	z-index:1;
+	font-size: 14px;
+	color: #FFF;
+	text-align: right;
+}
+#apDiv2 {
+	position:absolute;
+	left:132px;
+	top:514px;
+	width:535px;
+	height:173px;
+	z-index:1;
+}
+#apDiv3 {
+	position:absolute;
+	left:160px;
+	top:610px;
+	width:464px;
+	height:168px;
+	z-index:1;
+}
+#Text {
+	position:absolute;
+	left:64px;
+	top:434px;
+	width:646px;
+	height:311px;
+	z-index:4;
+	visibility: visible;
+	font-size: 24px;
+	text-align: center;
+	font-family: "Century Glotic";
+	color: #933;
+}
+body,td,th {
+	font-family: "Century Gothic";
+	font-size: 24px;
+}
+#apDiv4 {
+	position:absolute;
+	left:480px;
+	top:218px;
+	width:301px;
+	height:71px;
+	z-index:1;
+}
+#blogmenu {
+	position:absolute;
+	left:101px;
+	top:374px;
+	width:499px;
+	height:157px;
+	z-index:3;
+	visibility: visible;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<div id="wrapper">
+  <div id="Container"></div>
+  <div id="Header"></div>
+  <div id="Social">
+    <ul id="navi">
+      <li><a href="http://twitter.com/sogcreate" target="_blank"><img src="img/FennecFoxFacebook.png" alt=""/></a></li>
+      <li><a href="http://twitter.com/sogcreate" target="_blank"><img src="img/FennecFoxTwitter.png" alt=""/></a></li>
+      <li><a href="http://twitter.com/sogcreate" target="_blank"><img src="img/FennecFoxSignup.png" alt=""/></a></li>
+    </ul>
+  </div>
+  <div id="Logo"><img name="logo" src="img/FennecFoxLogo.png" width="426" height="321" alt=""></div>
+  <div id="TopLink"><strong>HOME</strong></div>
+
+
+  <div id="Footer">
+  </div>
+  <div id="apDiv1"><img src="img/WhiteLine.png" alt="" name="whiteline" width="500" height="1"></div>
+<div id="blogmenu">
+<?php require_once('page.php'); ?>
+</div>
+
+
+
+</div>
+
+
+
+<img src="img/FennecFoxBackground.png" alt="background" width="100%" height="100%" id="bg" />
+</body>
+</html>

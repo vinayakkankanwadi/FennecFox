@@ -1,0 +1,20 @@
+INSERT INTO test VALUES ("Powderfinger", "Genre", "Rock");
+INSERT INTO test VALUES ("Powderfinger", "Nationality", "Australia");
+INSERT INTO test VALUES ("Powderfinger", "City", "Brisbane");
+INSERT INTO test VALUES ("Powderfinger", "Year", "1998");
+INSERT INTO test VALUES ("Akon", "Genre", "Pop");
+INSERT INTO test VALUES ("Akon", "Nationality", "US");
+INSERT INTO test VALUES ("Akon", "City", "LA");
+INSERT INTO test VALUES ("Akon", "Year", "1998");
+INSERT INTO test VALUES ("Obama", "son", "Ann");
+INSERT INTO test VALUES ("Ann", "daughter", "Stanley");
+
+SELECT * FROM `test` WHERE `itemfrom` ='Powderfinger';
+SELECT * FROM `test` WHERE `itemto` ='1998';
+SELECT DISTINCT `relationship` , `itemfrom` , `itemto` FROM `test` WHERE `relationship` = 'City'
+select `itemto` from `test` where  (select `itemfrom` from `test` where `relationship` ="daughter")
+
+
+SELECT p.product_name FROM product p
+WHERE p.product_id = (SELECT o.product_id FROM order_items o
+WHERE o.product_id = p.product_id); 

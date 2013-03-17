@@ -1,0 +1,397 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+
+<script type='text/javascript' src='js/jquery.js'></script>
+<script type='text/javascript' src='js/jquery.jqDock.js'></script>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27044673-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+<style type="text/css">
+
+#submenu {
+	position:absolute;
+	left:7px;
+	top:875px;
+	width:694px;
+	height:132px;
+	z-index:6;
+	border-radius:5;
+	visibility:hidden;
+}
+#submenu img {
+	visibility:hidden; 
+}
+
+p.small {line-height:140%;
+	color:#6d362c;
+	font-family: "Century Gothic";
+	font-size:18px;
+}
+p.big {line-height:160%;
+	color:#6d362c;
+	font-family: "Century Gothic";
+	font-size:18px;
+}
+
+p.large {
+	font-family: "Century Gothic";
+	font-size: 36px;
+	color:#6d362c;
+}
+
+    #hint{
+		cursor:pointer;
+	}
+	
+	.tooltip{
+		position: absolute;
+		z-index:9999;
+		width:70px;
+		height:24px;
+		font-size:16px;
+		opacity:0.9;
+/*		background:#D6D6D6;
+		border-radius:4;*/
+		text-align:center;
+	}
+
+#Container {
+	position:absolute;
+	width:800px;
+	height:974px;
+	z-index:1;
+	visibility: visible;
+	left: 0px;
+	top: 0px;
+}
+#Header {
+	position:absolute;
+	width:763px;
+	height:352px;
+	z-index:2;
+	left: 17px;
+	top: 41px;
+	visibility: visible;
+}
+</style>
+<link href="css/browser.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+#Social {
+	position:absolute;
+	left:390px;
+	top:289px;
+	width:382px;
+	height:100px;
+	z-index:3;
+	visibility: visible;
+}
+#Logo {
+	position:absolute;
+	left:26px;
+	top:-10px;
+	width:652px;
+	height:414px;
+	z-index:3;
+}
+#Body {
+	position:absolute;
+	left:43px;
+	top:423px;
+	width:688px;
+	height:340px;
+	z-index:2;
+	visibility: visible;
+}
+
+#navi li
+{
+display: inline;
+list-style-type: none;
+padding-right: 10px;
+}
+
+#menu {
+	position:absolute;
+	left:20px;
+	top:771px;
+	width:739px;
+	height:166px;
+	z-index:1;
+}
+#apDiv1 {
+	position:absolute;
+	left:264px;
+	top:83px;
+	width:514px;
+	height:49px;
+	z-index:1;
+}
+#TopLink {
+	position:absolute;
+	left:632px;
+	top:43px;
+	width:111px;
+	height:35px;
+	z-index:5;
+	font-size: 14px;
+	color: #FFF;
+	text-align: right;
+}
+#apDiv2 {
+	position:absolute;
+	left:132px;
+	top:514px;
+	width:535px;
+	height:173px;
+	z-index:1;
+}
+#apDiv3 {
+	position:absolute;
+	left:160px;
+	top:610px;
+	width:464px;
+	height:168px;
+	z-index:1;
+}
+
+#AppStore {
+	border-color:#000;
+	border-style:
+}
+
+#Text {
+	position:absolute;
+	left:64px;
+	top:407px;
+	width:646px;
+	height:311px;
+	z-index:4;
+	visibility: visible;
+	font-size: 24px;
+	text-align: center;
+	font-family: "Century Glotic";
+	color: #933;
+}
+body,td,th,a {
+	font-family: "Century Gothic";
+	font-size: 24px;
+}
+
+
+	
+img#bg {
+	z-index:-9999;
+	position:fixed;
+	top:20;
+	left:0;
+	width:100%;
+	height:100%; 
+}
+
+div#header {
+	z-index:-9999;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:10%;
+	visibility: visible;
+	background-color: #000000;
+}
+
+div#footer {
+	z-index:5;
+	position:fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:5%;
+	visibility: visible;
+	background-color: #000000;
+}
+
+#Foot {
+	position:absolute;
+	top:810px;
+	left:0px;
+	width:100%;
+	height:210px;
+	bottom:0;
+	z-index:5;
+	background-color: #000000;
+	min-width:820px;
+}
+
+#FootData {
+	position:absolute;
+	top:821px;
+	bottom:0;
+	z-index:9;
+	background-color: #000000;
+	left: 10px;
+	width: 760px;
+	height: 160px;
+}
+
+.text {
+	text-align:left;
+	color:white;
+	font-size:14px;
+	text-decoration:none;
+	font-family: "Century Gothic";
+}
+
+.textShade {
+	text-align:center;
+	color:#333;
+	font-weight:bold;
+	font-size:10px;
+	text-decoration:none;
+	font-family:"Century Gothic";
+	z-index:99;
+}
+
+#Border {
+	position:absolute;
+	left:52px;
+	top:432px;
+	width:676px;
+	height:110px;
+	z-index:5;
+}
+#MeetFoxText {
+	position:absolute;
+	left:188px;
+	top:30px;
+	width:290px;
+	height:66px;
+	z-index:5;
+}
+#MeetFoxWhiteLine {
+	position:absolute;
+	left:180px;
+	top:94px;
+	width:300px;
+	height:42px;
+	z-index:6;
+}
+#Coming {
+	position:absolute;
+	left:429px;
+	top:349px;
+	width:294px;
+	height:81px;
+	z-index:6;
+}
+#apDiv4 {
+	position:absolute;
+	left:85px;
+	top:932px;
+	width:637px;
+	height:67px;
+	z-index:6;
+}
+#GrayLine {
+	position:absolute;
+	left:213px;
+	top:157px;
+	width:550px;
+	height:7px;
+	z-index:1;
+}
+#IntroText {
+	position:absolute;
+	left:9px;
+	top:93px;
+	width:646px;
+	height:94px;
+	z-index:9;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<div id="wrapper">
+  <div id="Header"></div>
+  <div id="Container">
+    <div id="Logo"><img name="logo" src="img/Logo.png" width="100%" height="100%" alt=""></div>
+<div id="Coming"><img src="img/ComingSoon.png"  width="80%" height="25%" alt="">
+</div>
+  <div id="Body">
+    <img name="Mbk" src="img/Box.png" width="687" height="335" alt="">
+  </div>
+  <div id="Border">
+    <img name="Mbk" src="img/BoxBorder.png" width="668" height="318" alt=""/>
+  </div>
+    <div id="Text">
+      <div id="MeetFoxText"><img src="img/MeetFox.png" width="100%"  height="100%"/></div>
+<div id="MeetFoxWhiteLine"><img width="290" src="img/WhiteLine.png" height="2"/></div>
+<div id="IntroText">
+  <p align="center" class="small"><strong>Imagine</strong> you had a friend, who knew all the <strong><em>best places</em></strong></em>, <br /> 
+    a friend who got you <em><strong>VIP treatment</strong></em> everywhere you went, <br /> a friend who organised the best nights even at the <em><strong>last minute</strong></em>. </p>
+  <p align="center" class="big">Let me introduce to you <em><strong>a friend with benefits.</strong></em> <br /> Let me introduce to you <em><strong>Fenec Fox</strong></em>. <br />
+ <strong><em>The Fox with an ear for the hottest deals around Town</em></strong> <br />
+ Fenec Fox coming to Melbourne Soon! <br />
+</p>
+</div>
+</div>
+
+
+</div>
+
+
+<div id="FootData" align="center" >
+
+<table align="center" width="100%" border="0">
+<tr>
+  <img src="img/NightB.png" align="middle"  border="0" id='1' onMouseOver="this.src='img/NightA.png'" onMouseOut="this.src='img/NightB.png'"/>
+  <img src="img/CafeB.png" align="middle" border="0" id='2' onMouseOver="this.src='img/CafeA.png'" onMouseOut="this.src='img/CafeB.png'"/>
+  <img src="img/FoodB.png" align="middle"  border="0" id='4' onMouseOver="this.src='img/FoodA.png'" onMouseOut="this.src='img/FoodB.png'"/>
+  <img src="img/EntB.png" align="middle" border="0" id='5' onMouseOver="this.src='img/EntA.png'" onMouseOut="this.src='img/EntB.png'"/> 
+  <img src="img/LeisureB.png" align="middle"  border="0" id='3' onMouseOver="this.src='img/LeisureA.png'" onMouseOut="this.src='img/LeisureB.png'"/>
+</tr>
+</table>
+
+<table align="center" width="100%"  border="0" bgcolor="#000000">
+<tr>
+  	  <td width="40%" align="left"  bgcolor="#000000"><img id="AppStore" src="img/AppStoreB.png" width="230" height="50" title="Coming soon to AppStore" onMouseOver="this.src='img/AppStoreA.png'" onMouseOut="this.src='img/AppStoreB.png'" /></td> 
+      <td width="50%" align="right" bgcolor="#000000"><a class="text" href="mailto:info@fenecfox.com" title="Contact Fenec Fox">CONTACT</a></td>
+</tr>
+</table>
+
+<div id="GrayLine" align="right">
+<img src="img/GreyLine.png" width="520" height="2"></div>
+<a class="textShade" href="http://shadesofgreendesign.com.au" target="_new">Designed by Shades of Green</a>
+</div>
+
+</div>
+
+
+<img src="img/Background.png" alt="background" width="100%" height="100%" id="bg" />
+<div id="header">
+</div>
+
+<div id="footer1">
+</div>
+
+<div id="Foot" align="center" >
+<img src="img/GreyLine.png" width="100%" height="4"></div>
+</div>  
+</body>
+</html>

@@ -1,0 +1,12 @@
+/* if IE  style sheet*/
+
+/*fix the grid_3 wrap ie bug by reducing the width slightly*/
+.column.grid_3{width: 21.99em;}
+
+div#header {height:110px;}
+
+div#logo {height:110px;}
+
+.promo img {width:13.8em;}
+
+.promo span.promoheading {margin-bottom:0;}

@@ -1,0 +1,102 @@
+/* if IE6  style sheet*/
+
+/* removes Frank Design from background*/
+div#wrapper {
+	background: none; 
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../img/background.png');
+}
+
+/* makes the search input box the same height and the search button*/
+input#wmt_searchbox {
+	height: 1.8em;
+}
+
+/* removes transparency from slider text boxes*/
+div.slidecontent h2{
+	background: #597A7B; 
+
+}
+p.description{
+	background: #efebe4; 
+}
+
+p.slidelink{
+	background: #4c4c4c; 
+}
+
+p.slidelink a,  div#slider p.slidelink a:visited{
+	display:block;
+	width: 9em; 
+	background: #4c4c4c; 
+	background: url('images/white-arrowhead.gif') no-repeat center right;
+	letter-spacing: 0.05em; 
+	font-weight: normal; 
+	padding: 0.3em 0.5em 0.3em 0.3em; 
+	margin-right:0.3em;
+}
+
+/* move slider navigation to one line */
+div.pagerwrapper {
+	width: 76em; 
+	margin-left: 4em; 
+	float: left; 
+	text-align: center;
+}
+
+ul.pager{position:absolute;}
+
+ul.pager li.activeSlide a{
+	/*display:block; remove this*/
+	position:relative;
+	top:4px;
+	left:3px;
+}
+
+/* adjust primary navigation visited links colour*/
+.primarynav ul li a:visited {
+	color:#fff; 
+}
+/* adjust secondary navigation vistited links colour*/
+.secondarynav a, .secondarynav a:visited {
+	color:#000; 
+	text-decoration:none;
+}
+
+/* adjust border on promo images */
+.promo img {
+	margin:  1px 0 0 1px;
+	}
+
+/* adjust news to have consitant background colour and show Newsroom link */
+#news {
+	height: 190px;
+}
+#news ol{
+	background: #efebe4;
+}
+#news .more{
+	background: #597a7b;
+	padding: 0;
+}
+
+/* adjust size and background of social feeds*/
+div.socialcontent {
+	width: 189px;
+	height: 160px; overflow:hidden;
+	margin-left: 0px;
+	padding: 10px 6px 6px 9px;
+	float:left;
+}
+#socialtabs li.selectedtab {
+    background: #efebe4;
+	margin: 0;
+	padding: 6px 3px 3px 2px;
+	border:none;
+}
+
+/* adjusted social footer visited link colour*/
+div.socialfooter a:visited{
+	color:#ffffff;
+}
+
+
